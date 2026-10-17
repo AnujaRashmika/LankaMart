@@ -1,0 +1,75 @@
+.offers {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.offer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 24px 20px;
+  border-radius: 22px;
+  color: #fff;
+  overflow: hidden;
+  min-height: 175px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+.offer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.18), transparent 55%);
+  pointer-events: none;
+}
+.offer__text {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+.offer h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+.offer p {
+  margin: 8px 0 16px;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+.offer .btn {
+  padding: 9px 18px;
+  font-size: 0.82rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+.offer img {
+  width: 42%;
+  max-height: 155px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+}
+
+/* Matching gradients from the design */
+.offer-green {
+  background: linear-gradient(135deg, #6bbf45 0%, #3d9a32 45%, #2a7a28 100%);
+}
+.offer-orange {
+  background: linear-gradient(135deg, #f7b04a 0%, #f08a24 50%, #e06a12 100%);
+}
+.offer-dark {
+  background: linear-gradient(135deg, #2a6b4a 0%, #1a4d38 50%, #0f3326 100%);
+}
+
+@media (max-width: 900px) {
+  .offers {
+    grid-template-columns: 1fr;
+  }
+  .offer {
+    min-height: 150px;
+  }
+}

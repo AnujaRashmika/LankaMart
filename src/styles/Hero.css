@@ -1,0 +1,247 @@
+.hero {
+  margin-top: 20px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  align-items: center;
+  gap: 0;
+  padding: 48px 40px;
+  border-radius: 28px;
+  overflow: hidden;
+  /* Soft multi-stop gradient matching the screenshot light greens */
+  background: linear-gradient(
+    125deg,
+    #f7fbf2 0%,
+    #eef7e4 35%,
+    #e3f1d4 65%,
+    #d8ebc8 100%
+  );
+  box-shadow: 0 8px 32px rgba(31, 122, 51, 0.08);
+}
+
+/* Soft blur glow on the right side for depth */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 80% at 85% 50%,
+    rgba(180, 220, 140, 0.35) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle left-to-right soft fade overlay so text and image merge smoothly */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 45%;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(244, 249, 238, 0.92) 0%,
+    rgba(236, 245, 222, 0.55) 25%,
+    rgba(230, 241, 214, 0.15) 55%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__text {
+  position: relative;
+  z-index: 3;
+  padding-right: 20px;
+}
+
+.hero small {
+  color: var(--green);
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  font-size: 0.78rem;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.35rem);
+  line-height: 1.1;
+  color: var(--green-dark);
+  font-weight: 800;
+  margin: 8px 0 16px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 460px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0 20px;
+  max-width: 480px;
+}
+
+.hero__input {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  border: 1.5px solid #cfe0c4;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  color: #8a9a84;
+}
+.hero__input input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  padding: 13px 0;
+  font-size: 0.88rem;
+  outline: none;
+}
+
+
+.hero__input input::placeholder {
+  color: #8a9a84;
+}
+
+.perks {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.perks li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.perks__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(31, 122, 51, 0.12);
+  flex-shrink: 0;
+}
+
+.perks b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hero__img {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero__img img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  max-height: 440px;
+  object-fit: contain;
+  /* Soft left edge fade so image merges into the gradient */
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 18%,
+    black 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 18%,
+    black 100%
+  );
+  filter: drop-shadow(-12px 8px 24px rgba(31, 90, 40, 0.12));
+}
+
+.hero__badge {
+  position: absolute;
+  top: 8%;
+  right: 6%;
+  background: linear-gradient(145deg, #2a9a40, #1a6b2e);
+  color: #fff;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-size: 0.7rem;
+  line-height: 1.15;
+  box-shadow:
+    0 8px 24px rgba(31, 122, 51, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  z-index: 4;
+}
+
+.hero__badge span {
+  opacity: 0.95;
+}
+
+.hero__badge strong {
+  font-size: 0.88rem;
+  display: block;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 28px 22px;
+    gap: 16px;
+  }
+  .hero::after {
+    display: none;
+  }
+  .hero__img {
+    justify-content: center;
+    order: -1;
+  }
+  .hero__img img {
+    max-height: 280px;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .hero__cta {
+    flex-direction: column;
+  }
+  .hero__badge {
+    width: 74px;
+    height: 74px;
+    font-size: 0.62rem;
+    top: 4%;
+    right: 8%;
+  }
+  .hero__badge strong {
+    font-size: 0.75rem;
+  }
+}

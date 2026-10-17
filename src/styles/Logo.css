@@ -1,0 +1,33 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.logo__mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(145deg, #24963c, #1a6b2a);
+  box-shadow: 0 3px 10px rgba(31, 122, 51, 0.3);
+}
+.logo__text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  letter-spacing: -0.3px;
+}
+.logo__text b {
+  color: var(--orange);
+  font-weight: 800;
+}
+.logo--light .logo__text {
+  color: #fff;
+}
+.logo--light .logo__mark {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: none;
+}

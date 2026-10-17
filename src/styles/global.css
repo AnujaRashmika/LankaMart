@@ -1,0 +1,111 @@
+:root {
+  --green: #1f7a33;
+  --green-dark: #14532d;
+  --orange: #f08a24;
+  --text: #1c2b1f;
+  --muted: #6b7a6f;
+  --radius: 16px;
+  --card-bg: #ffffff;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: #fafcf8;
+  line-height: 1.5;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input {
+  font-family: inherit;
+}
+button {
+  cursor: pointer;
+  border: 0;
+  background: none;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+.container {
+  width: min(1200px, 92%);
+  margin-inline: auto;
+}
+.section {
+  margin-top: 40px;
+}
+.section__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.section__head h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+.section__head > a {
+  color: var(--green);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.btn {
+  background: linear-gradient(145deg, #24963c, #1a6b2a);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 11px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+  box-shadow: 0 3px 10px rgba(31, 122, 51, 0.25);
+}
+.btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(31, 122, 51, 0.3);
+}
+.btn--white {
+  background: #fff;
+  color: var(--green-dark);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.btn--white:hover {
+  background: #f8faf6;
+  filter: none;
+}
+.btn--block {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.82rem;
+}
+.btn--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.section__head > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
