@@ -1,4 +1,4 @@
-import { Search, ArrowRight, ShieldCheck, Truck, CreditCard } from 'lucide-react'
+import { ShieldCheck, Truck, CreditCard } from 'lucide-react'
 import '../styles/Hero.css'
 
 const perks = [
@@ -17,15 +17,6 @@ export default function Hero() {
           Shop from a wide range of fresh fruits, vegetables, dairy, pantry staples and more.
           Quality you can trust, convenience you'll love.
         </p>
-        <div className="hero__cta">
-          <label className="hero__input">
-            <Search size={18} />
-            <input type="text" placeholder="Search for products..." />
-          </label>
-          <button className="btn btn--icon" type="button">
-            Shop Now <ArrowRight size={18} />
-          </button>
-        </div>
         <ul className="perks">
           {perks.map(({ Icon, title, sub }) => (
             <li key={title}>

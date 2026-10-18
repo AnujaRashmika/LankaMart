@@ -1,7 +1,5 @@
 .header {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #fff;
   position: sticky;
   top: 0;
   z-index: 20;
@@ -104,25 +102,11 @@
   color: var(--green);
   border-color: var(--green);
 }
-.deliver {
-  font-size: 0.8rem;
-  color: var(--muted);
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-.deliver svg {
-  color: var(--orange);
-}
-.deliver b {
-  color: var(--text);
-}
 @media (max-width: 900px) {
   .header__actions .icon-btn:not(.cart) {
     display: none;
   }
-  .header__nav nav,
-  .deliver {
+  .header__nav nav {
     display: none;
   }
 }

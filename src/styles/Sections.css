@@ -1,0 +1,138 @@
+/* ---------- Deals of the Day ---------- */
+.deal-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.countdown {
+  display: flex;
+  gap: 6px;
+}
+.countdown span {
+  min-width: 34px;
+  padding: 4px 6px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #24963c, #1a6b2a);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Shop by Needs ---------- */
+.needs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.need {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+  padding: 22px 12px;
+  background: #fff;
+  border: 1px solid #e4ede0;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.22s, transform 0.22s;
+}
+.need:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(30, 90, 40, 0.12);
+}
+.need__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 10px;
+}
+.need b {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.need small {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+/* ---------- Story banner ---------- */
+.story {
+  position: relative;
+  margin-top: 40px;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  padding: 44px 52px;
+  border-radius: 28px;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(110deg, #0f3d22 0%, #1a5c32 45%, #2d8a45 100%);
+  box-shadow: 0 10px 30px rgba(15, 61, 34, 0.25);
+  contain: paint;
+}
+.story__text {
+  position: relative;
+  z-index: 2;
+  max-width: 440px;
+}
+.story h2 {
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+.story p {
+  margin: 12px 0 22px;
+  opacity: 0.92;
+  font-size: 1rem;
+}
+/* Very large image: starts around the centre, runs to the right edge, and is cropped
+   top / bottom / right so only part of the fruit basket shows (like a big close-up). */
+.story img {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  transform: translateY(-46%);
+  height: 200%;
+  width: auto;
+  max-width: none;
+  z-index: 1;
+  pointer-events: none;
+}
+/* soft fade on the left edge of the image (cheap overlay, no mask / filter) */
+.story::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(26, 92, 50, 0.96) 0%,
+    rgba(26, 92, 50, 0.75) 32%,
+    rgba(26, 92, 50, 0) 58%
+  );
+}
+
+@media (max-width: 800px) {
+  .needs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .story {
+    padding: 30px 22px;
+    min-height: 280px;
+  }
+  .story img {
+    height: 170%;
+    right: -30%;
+    opacity: 0.35;
+  }
+  .story::after {
+    display: none;
+  }
+}

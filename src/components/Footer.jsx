@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { MapPin, Phone, Mail, Clock, ArrowRight } from 'lucide-react'
 import Logo from './Logo.jsx'
 import '../styles/Footer.css'
@@ -31,7 +32,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="contact">
       <div className="container footer__grid">
         <div className="footer__brand">
           <Logo light />
@@ -61,7 +62,7 @@ export default function Footer() {
           <h5>Help</h5>
           <ul>
             {help.map((l) => (
-              <li key={l}><a href="#">{l}</a></li>
+              <li key={l}>{l === 'About Us' ? <Link to="/about">{l}</Link> : <a href="#">{l}</a>}</li>
             ))}
           </ul>
         </div>
@@ -70,7 +71,7 @@ export default function Footer() {
           <h5>Contact</h5>
           <ul className="footer__contact">
             <li><MapPin size={16} /> Piliyandala, Colombo, Sri Lanka</li>
-            <li><Phone size={16} /> +94 11 234 5678</li>
+            <li><Phone size={16} /> +94 77 348 0439</li>
             <li><Mail size={16} /> hello@lankamart.lk</li>
             <li><Clock size={16} /> Daily 7:00 AM – 10:00 PM</li>
           </ul>

@@ -2,10 +2,11 @@
   margin-top: 20px;
   position: relative;
   display: grid;
-  grid-template-columns: 1.15fr 0.95fr;
+  grid-template-columns: 1fr;
+  min-height: 460px;
   align-items: center;
   gap: 0;
-  padding: 48px 40px;
+  padding: 30px 40px;
   border-radius: 28px;
   overflow: hidden;
   /* Soft multi-stop gradient matching the screenshot light greens */
@@ -56,6 +57,7 @@
   position: relative;
   z-index: 3;
   padding-right: 20px;
+  max-width: 52%;
 }
 
 .hero small {
@@ -83,43 +85,10 @@
   line-height: 1.55;
 }
 
-.hero__cta {
-  display: flex;
-  gap: 12px;
-  margin: 24px 0 20px;
-  max-width: 480px;
-}
 
-.hero__input {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 18px;
-  border: 1.5px solid #cfe0c4;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  color: #8a9a84;
-}
-.hero__input input {
-  flex: 1;
-  min-width: 0;
-  border: 0;
-  background: transparent;
-  padding: 13px 0;
-  font-size: 0.88rem;
-  outline: none;
-}
-
-
-.hero__input input::placeholder {
-  color: #8a9a84;
-}
 
 .perks {
+  margin-top: 26px;
   list-style: none;
   display: flex;
   gap: 22px;
@@ -152,7 +121,12 @@
 }
 
 .hero__img {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  transform: translateY(-50%);
+  width: 58%;
+  height: 100%;
   z-index: 2;
   display: flex;
   justify-content: flex-end;
@@ -161,10 +135,9 @@
 
 .hero__img img {
   width: 100%;
-  max-width: 420px;
-  height: auto;
-  max-height: 440px;
+  height: 100%;
   object-fit: contain;
+  object-position: right center;
   /* Soft left edge fade so image merges into the gradient */
   mask-image: linear-gradient(
     90deg,
@@ -178,7 +151,6 @@
     black 18%,
     black 100%
   );
-  filter: drop-shadow(-12px 8px 24px rgba(31, 90, 40, 0.12));
 }
 
 .hero__badge {
@@ -215,24 +187,33 @@
 
 @media (max-width: 900px) {
   .hero {
-    grid-template-columns: 1fr;
-    padding: 28px 22px;
+    padding: 24px 22px;
     gap: 16px;
+    min-height: 0;
+  }
+  .hero__text {
+    max-width: none;
+    padding-right: 0;
   }
   .hero::after {
     display: none;
   }
   .hero__img {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
     justify-content: center;
     order: -1;
   }
   .hero__img img {
-    max-height: 280px;
+    height: auto;
+    max-height: 300px;
+    object-position: center;
     mask-image: none;
     -webkit-mask-image: none;
-  }
-  .hero__cta {
-    flex-direction: column;
   }
   .hero__badge {
     width: 74px;

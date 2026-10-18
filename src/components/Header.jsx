@@ -1,10 +1,21 @@
-import { Search, User, Heart, ShoppingCart, Menu, MapPin } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
+import { Search, User, ShoppingCart, Menu } from 'lucide-react'
 import Logo from './Logo.jsx'
 import '../styles/Header.css'
 
-const links = ['Home', 'Shop', 'Deals', 'About Us', 'Contact']
+const links = [
+  { label: 'Home', to: '/' },
+  { label: 'Shop', to: '/' },
+  { label: 'Deals', to: '/' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Contact', to: '/#contact' },
+]
 
 export default function Header({ cartCount }) {
+  const { pathname, hash } = useLocation()
+  const isActive = (label) =>
+    label === 'Contact' ? hash === '#contact' : label === 'About Us' ? pathname === '/about' : label === 'Home' ? pathname === '/' && !hash : false
+
   return (
     <header className="header">
       <div className="container header__top">
@@ -20,10 +31,6 @@ export default function Header({ cartCount }) {
             <User size={22} strokeWidth={1.9} />
             Account
           </button>
-          <button className="icon-btn" type="button">
-            <Heart size={22} strokeWidth={1.9} />
-            Wishlist
-          </button>
           <button className="icon-btn cart" type="button">
             <ShoppingCart size={22} strokeWidth={1.9} />
             Cart
@@ -36,13 +43,10 @@ export default function Header({ cartCount }) {
           <Menu size={18} /> All Categories
         </button>
         <nav>
-          {links.map((l, i) => (
-            <a key={l} href="#" className={i === 0 ? 'active' : ''}>{l}</a>
+          {links.map(({ label, to }) => (
+            <Link key={label} to={to} className={isActive(label) ? 'active' : ''}>{label}</Link>
           ))}
         </nav>
-        <div className="deliver">
-          <MapPin size={16} /> Deliver to <b>Piliyandala, Colombo</b>
-        </div>
       </div>
     </header>
   )
