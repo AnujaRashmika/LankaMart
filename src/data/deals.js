@@ -9,7 +9,7 @@ export const deals = [
 // Best Selling Products: images are public/images/best1 ... best4 (.jpg / .png / .webp)
 export const bestSellers = [
   { id: 15, name: 'Mango', category: 'Fruits', badge: 'Best Seller', rating: 4.8, price: 3.99, unit: '/kg', image: '/images/best1', desc: 'Sweet, fragrant ripe mangoes with smooth, juicy flesh. A tropical favourite all year round.', origin: 'Sri Lanka' },
-  { id: 16, name: 'Bell Peppers', category: 'Vegetables', badge: 'Best Seller', rating: 4.7, price: 3.19, unit: '/kg', image: '/images/best2', desc: 'Colourful, sweet bell peppers that add crunch and flavour to any dish.', origin: 'Sri Lanka' },
-  { id: 17, name: 'Chocolate Muffins', category: 'Bakery', badge: 'Best Seller', rating: 4.9, price: 2.49, unit: '/pack', image: '/images/best3', desc: 'Moist, rich chocolate muffins with chocolate chips. A treat for tea time.', origin: 'Baked in-store' },
-  { id: 18, name: 'Granola Bars', category: 'Snacks', badge: 'Best Seller', rating: 4.7, price: 3.49, unit: '/pack', image: '/images/best4', desc: 'Chewy granola bars with oats, seeds and dried fruit. A handy on-the-go snack.', origin: 'Imported' },
+  { id: 16, name: 'Grapes', category: 'Fruits', badge: 'Fresh', rating: 4.7, price: 3.99, unit: '/kg', image: '/images/best2', desc: 'Seedless, crisp and naturally sweet grapes. A great snack straight from the fridge.', origin: 'Imported' },
+  { id: 17, name: 'Strawberries', category: 'Fruits', badge: 'Fresh', rating: 4.8, price: 2.99, unit: '/pack', image: '/images/best3', desc: 'Plump, bright red strawberries picked at peak ripeness. Delicious with cream or in desserts.', origin: 'Imported' },
+  { id: 18, name: 'Pineapple', category: 'Fruits', badge: 'Best Seller', rating: 4.7, price: 2.49, unit: '/pc', image: '/images/best4', desc: 'Golden, juicy pineapple with a perfect balance of sweet and tangy. Great fresh or grilled.', origin: 'Sri Lanka' },
 ]

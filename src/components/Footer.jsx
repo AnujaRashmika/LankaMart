@@ -71,7 +71,7 @@ export default function Footer() {
           <h5>Contact</h5>
           <ul className="footer__contact">
             <li><MapPin size={16} /> Piliyandala, Colombo, Sri Lanka</li>
-            <li><Phone size={16} /> +94 77 348 0439</li>
+            <li><Phone size={16} /> +94 11 234 5678</li>
             <li><Mail size={16} /> hello@lankamart.lk</li>
             <li><Clock size={16} /> Daily 7:00 AM – 10:00 PM</li>
           </ul>
